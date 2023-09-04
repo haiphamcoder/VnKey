@@ -28,7 +28,24 @@
     <property name="halign">start</property>
     <property name="stock">gtk-delete</property>
   </object>
-  <object class="GtkListStore" id="liststore1"/>
+  <object class="GtkListStore" id="liststore1">
+    <columns>
+      <!-- column-name Từ gõ tắt -->
+      <column type="gchararray"/>
+      <!-- column-name Nội dung đầy đủ -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">sout</col>
+        <col id="1" translatable="yes">System.out.println("");</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes" context="dafdsfasfd" comments="adfadsfadsf">souf</col>
+        <col id="1" translatable="yes" context="adfasdfasdf" comments="asdfasdfasdfasfd">System.out.printf("");</col>
+      </row>
+    </data>
+  </object>
   <object class="GtkWindow" id="GoTat_Window">
     <property name="can_focus">False</property>
     <property name="resizable">False</property>
@@ -154,6 +171,8 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="model">liststore1</property>
+                    <property name="headers_clickable">False</property>
+                    <property name="enable_grid_lines">both</property>
                     <child internal-child="selection">
                       <object class="GtkTreeSelection"/>
                     </child>
@@ -848,7 +867,7 @@ Trân trọng cảm ơn!</property>
                     <property name="column_spacing">10</property>
                     <property name="row_homogeneous">True</property>
                     <child>
-                      <object class="GtkButton">
+                      <object class="GtkButton" id="btnBangGoTat">
                         <property name="label" translatable="yes">Bảng gõ tắt...</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
